@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <defs>
+    <linearGradient id="gasGrad" x1="4" y1="4" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#14DCAC"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+  <rect width="48" height="48" rx="12" fill="#0E1217"/>
+  <rect x="1" y="1" width="46" height="46" rx="11" stroke="url(#gasGrad)" stroke-width="2" stroke-opacity="0.6"/>
+  <!-- Fuel pump nozzle and gauge flame -->
+  <path d="M14 16C14 13.7909 15.7909 12 18 12H26C28.2091 12 30 13.7909 30 16V36H14V16Z" fill="#171D25" stroke="#14DCAC" stroke-width="2"/>
+  <rect x="18" y="17" width="8" height="6" rx="2" fill="#14DCAC" fill-opacity="0.2" stroke="#14DCAC"/>
+  <path d="M30 20H33C34.1046 20 35 20.8954 35 22V31C35 32.6569 33.6569 34 32 34V34C30.3431 34 29 32.6569 29 31V28" stroke="#14DCAC" stroke-width="2" stroke-linecap="round"/>
+  <!-- Flame / spark accent -->
+  <circle cx="22" cy="29" r="2.5" fill="#14DCAC"/>
+</svg>
