@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#142129"/>
+      <stop offset="55%" stop-color="#0B1015"/>
+      <stop offset="100%" stop-color="#050709"/>
+    </radialGradient>
+
+    <!-- Outer Ring Gradient -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14DCAC"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+
+    <!-- Glowing Gas Flame Gradient -->
+    <linearGradient id="glowGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#14DCAC"/>
+      <stop offset="60%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#A7F3D0"/>
+    </linearGradient>
+
+    <!-- Neon Glow Filter -->
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur1"/>
+      <feGaussianBlur stdDeviation="24" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Deep Obsidian Background Canvas -->
+  <rect width="512" height="512" fill="url(#bgGrad)"/>
+
+  <!-- Subtle Circular Guide Frame for Twitter Avatar -->
+  <circle cx="256" cy="256" r="236" fill="none" stroke="url(#ringGrad)" stroke-width="3" stroke-opacity="0.35"/>
+  <circle cx="256" cy="256" r="218" fill="#0D141C" fill-opacity="0.6"/>
+
+  <!-- Ambient Glow Behind Main Emblem -->
+  <circle cx="256" cy="250" r="110" fill="#14DCAC" fill-opacity="0.08" filter="url(#neonGlow)"/>
+
+  <!-- Central GasDiary Emblem: Stylized Gas Nozzle & Digital Ledger Core -->
+  <g id="gas-diary-icon" transform="translate(256, 256)">
+
+    <!-- Ledger Pages Silhouette (Open Book / Block Wings) -->
+    <path d="M-80 -40 C-40 -60, -10 -50, 0 -30 C10 -50, 40 -60, 80 -40 C75 50, 50 100, 0 110 C-50 100, -75 50, -80 -40 Z" 
+          fill="#111822" stroke="url(#ringGrad)" stroke-width="3" stroke-opacity="0.4"/>
+
+    <!-- Left Diary Page Lines -->
+    <line x1="-58" y1="-10" x2="-18" y2="-6" stroke="#14DCAC" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.4"/>
+    <line x1="-62" y1="18" x2="-22" y2="22" stroke="#14DCAC" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.4"/>
+    <line x1="-54" y1="46" x2="-26" y2="50" stroke="#14DCAC" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.3"/>
+
+    <!-- Right Diary Page Lines -->
+    <line x1="18" y1="-6" x2="58" y2="-10" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.4"/>
+    <line x1="22" y1="22" x2="62" y2="18" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.4"/>
+    <line x1="26" y1="50" x2="54" y2="46" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.3"/>
+
+    <!-- Fuel Pump Body (Central Modern Pillar) -->
+    <rect x="-44" y="-85" width="88" height="135" rx="16" fill="#151D28" stroke="url(#ringGrad)" stroke-width="4"/>
+
+    <!-- Digital Gas Meter Screen -->
+    <rect x="-30" y="-70" width="60" height="42" rx="8" fill="#080E14" stroke="#14DCAC" stroke-width="2" stroke-opacity="0.8"/>
+
+    <!-- Digital Pulse / Metric Wave on Screen -->
+    <path d="M-22 -49 L-12 -49 L-6 -58 L0 -38 L7 -52 L14 -49 L22 -49" fill="none" stroke="#14DCAC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)"/>
+
+    <!-- Dynamic Gas Flame / Spark Icon in Lower Chamber -->
+    <path d="M0 -10 C-14 8, -16 26, -2 36 C-12 28, -6 18, 0 10 C6 18, 12 28, 2 36 C16 26, 14 8, 0 -10 Z" 
+          fill="url(#glowGrad)" filter="url(#softGlow)"/>
+
+    <!-- Fuel Nozzle Cable & Holster (Right side) -->
+    <path d="M44 -45 C64 -45, 75 -35, 75 -15 V35 C75 55, 62 70, 48 70 H38" 
+          fill="none" stroke="url(#ringGrad)" stroke-width="4.5" stroke-linecap="round"/>
+
+    <!-- Metallic Nozzle Spout -->
+    <path d="M75 -15 L86 -26 C90 -30, 96 -30, 100 -26 L102 -24 C106 -20, 106 -14, 102 -10 L90 2" 
+          fill="none" stroke="#38BDF8" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="94" y1="-22" x2="108" y2="-36" stroke="#14DCAC" stroke-width="3.5" stroke-linecap="round"/>
+
+    <!-- Base Ledger Platform / Cryptographic Hash Ticks -->
+    <rect x="-56" y="55" width="112" height="10" rx="5" fill="#1C2735" stroke="url(#ringGrad)" stroke-width="2.5"/>
+  </g>
+
+  <!-- Glowing Corner Sparks -->
+  <circle cx="130" cy="140" r="3" fill="#14DCAC" filter="url(#softGlow)"/>
+  <circle cx="380" cy="130" r="4" fill="#38BDF8" filter="url(#softGlow)"/>
+  <circle cx="395" cy="370" r="3.5" fill="#14DCAC" filter="url(#softGlow)"/>
+  <circle cx="115" cy="360" r="2.5" fill="#38BDF8" filter="url(#softGlow)"/>
+</svg>
+

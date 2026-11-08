@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "compile": "hardhat --config hardhat.config.cjs compile",
     "test:contract": "hardhat --config hardhat.config.cjs test",
-    "deploy:bot": "node scripts/deploy.cjs"
+    "deploy:bot": "node scripts/deploy.cjs",
+    "deploy:mainnet": "node scripts/deploy.cjs"
   },
   "dependencies": {
     "@reown/appkit": "^1.8.24",

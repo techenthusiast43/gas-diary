@@ -1,7 +1,7 @@
 import { createAppKit } from '@reown/appkit/react';
 import { WagmiAdapter } from '@reown/appkit-adapter-wagmi';
 import { http } from 'wagmi';
-import { botChainTestnet, WALLETCONNECT_PROJECT_ID } from './chain';
+import { botChainMainnet, WALLETCONNECT_PROJECT_ID } from './chain';
 
 export const projectId = WALLETCONNECT_PROJECT_ID;
 
@@ -9,19 +9,19 @@ export const projectId = WALLETCONNECT_PROJECT_ID;
 const metadata = {
   name: 'GasDiary',
   description: 'Gas fee tracking and on-chain expense annotation dApp for BOT Chain',
-  url: 'https://scan.bohr.life',
-  icons: ['https://scan.bohr.life/static/homepage/sidebar-logo.svg'],
+  url: 'https://scan.botchain.ai',
+  icons: ['/twitter-profile-avatar.png'],
 };
 
-// Networks array
-export const networks = [botChainTestnet] as const;
+// Networks array (BOT Chain Mainnet)
+export const networks = [botChainMainnet] as const;
 
 // Create Wagmi Adapter
 export const wagmiAdapter = new WagmiAdapter({
   projectId,
-  networks: [botChainTestnet],
+  networks: [botChainMainnet],
   transports: {
-    [botChainTestnet.id]: http('https://rpc.bohr.life'),
+    [botChainMainnet.id]: http('https://rpc.botchain.ai'),
   },
 });
 
@@ -31,8 +31,8 @@ export const config = wagmiAdapter.wagmiConfig;
 createAppKit({
   adapters: [wagmiAdapter],
   projectId,
-  networks: [botChainTestnet],
-  defaultNetwork: botChainTestnet,
+  networks: [botChainMainnet],
+  defaultNetwork: botChainMainnet,
   metadata,
   features: {
     analytics: true,

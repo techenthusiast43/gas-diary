@@ -1,8 +1,10 @@
 # GasDiary ⛽📖
 
-**GasDiary** is a gas-fee tracking and expense annotation dApp built for **BOT Chain Testnet** (Chain ID: `968`).
+**GasDiary** is a gas-fee tracking and expense annotation dApp built natively for **BOT Chain Mainnet** (Chain ID: `677`).
 
 It connects directly with your Web3 wallet (MetaMask, Rabby, etc.) and the BOT Chain Blockscout explorer to calculate transaction fees, monitor gas trends over time, identify failed transactions, categorize DeFi and contract interactions, and save verifiable expense memos on-chain via `GasDiary.sol`.
+
+📄 **Read the official [Project Whitepaper](WHITEPAPER.md)** for architecture deep dives, mathematical models, and the protocol roadmap.
 
 ---
 
@@ -22,13 +24,13 @@ It connects directly with your Web3 wallet (MetaMask, Rabby, etc.) and the BOT C
    - Self-sovereign on-chain annotations linked directly to your wallet address.
    - Stores category labels, transaction hashes, and personal notes on BOT Chain.
    - Batch tagging and tag removal support.
-   - Local fallback storage mode for zero-gas test runs.
+   - Local fallback storage mode for zero-gas runs.
 
 4. **Tax & Bookkeeping Export**
-   - Export full transaction history as formatted **CSV** files with direct links to the Bohr Block Explorer (`https://scan.bohr.life`).
+   - Export full transaction history as formatted **CSV** files with direct links to the BOT Chain Explorer (`https://scan.botchain.ai`).
 
 5. **Demo Mode / Live Mode**
-   - Pre-loaded with realistic BOT Chain transactions so you can explore the full dashboard even before funding a new testnet wallet.
+   - Pre-loaded with realistic BOT Chain transactions so you can explore the full dashboard even before funding a new wallet.
 
 ---
 
@@ -36,13 +38,15 @@ It connects directly with your Web3 wallet (MetaMask, Rabby, etc.) and the BOT C
 
 | Parameter | Value |
 |---|---|
-| **Network Name** | BOT Chain Testnet |
-| **Chain ID** | `968` |
+| **Network Name** | BOT Chain Mainnet |
+| **Chain ID** | `677` |
 | **Currency Symbol** | `BOT` |
 | **Decimals** | `18` |
-| **RPC Endpoint** | `https://rpc.bohr.life` |
-| **Block Explorer** | [https://scan.bohr.life/](https://scan.bohr.life/) |
-| **Blockscout API** | `https://scan.bohr.life/api/v2` |
+| **Total Supply** | 150 Million BOT |
+| **RPC Endpoint** | `https://rpc.botchain.ai` |
+| **Block Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) |
+| **Blockscout API** | `https://scan.botchain.ai/api/v2` |
+| **GasDiary Contract** | [`0x5a04E7558461121941eC2A52a019D6F577437A6C`](https://scan.botchain.ai/address/0x5a04E7558461121941eC2A52a019D6F577437A6C?tab=contract) *(Verified on Explorer)* |
 
 ---
 
@@ -71,11 +75,11 @@ Run contract unit tests:
 npm run test:contract
 ```
 
-Deploy to BOT Chain Testnet:
+Deploy to BOT Chain Mainnet:
 ```bash
 # Add your private key in .env or environment variable
 export PRIVATE_KEY="0x..."
-npm run deploy:bot
+npm run deploy:mainnet
 ```
 
 ---

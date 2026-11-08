@@ -8,7 +8,7 @@ try {
 
 async function main() {
   console.log("==========================================");
-  console.log("Deploying GasDiary to BOT Chain Testnet...");
+  console.log("Deploying GasDiary to BOT Chain Mainnet...");
   console.log("==========================================");
 
   let rawKey = process.env.PRIVATE_KEY;
@@ -17,7 +17,8 @@ async function main() {
   }
   const privateKey = rawKey.startsWith("0x") ? rawKey : `0x${rawKey}`;
 
-  const rpcUrl = process.env.VITE_BOT_RPC_URL || "https://rpc.bohr.life";
+  const rpcUrl = process.env.VITE_BOT_RPC_URL || "https://rpc.botchain.ai";
+  const explorerUrl = process.env.VITE_BOT_EXPLORER_URL || "https://scan.botchain.ai";
   const provider = new ethers.JsonRpcProvider(rpcUrl);
 
   const wallet = new ethers.Wallet(privateKey, provider);
@@ -27,7 +28,7 @@ async function main() {
   console.log("Deployer Balance:", ethers.formatEther(balance), "BOT");
 
   if (balance === 0n) {
-    console.warn("WARNING: Deployer wallet has 0 BOT. You need BOT testnet gas tokens to broadcast the contract deployment.");
+    console.warn("WARNING: Deployer wallet has 0 BOT. You need BOT gas tokens to broadcast the contract deployment.");
   }
 
   const artifactPath = path.join(__dirname, "../src/contracts/artifacts/contracts/GasDiary.sol/GasDiary.json");
@@ -49,7 +50,7 @@ async function main() {
   console.log("------------------------------------------");
   console.log(">>> GasDiary Contract Deployed Successfully! <<<");
   console.log("Contract Address:", address);
-  console.log("Bohr Explorer URL:", `https://scan.bohr.life/address/${address}`);
+  console.log("BOT Chain Explorer URL:", `${explorerUrl}/address/${address}`);
   console.log("------------------------------------------");
 
   // Automatically update .env with deployed address

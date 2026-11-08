@@ -14,6 +14,7 @@ export const TransactionTable: React.FC<TransactionTableProps> = ({
   walletAddress,
   onOpenTagModal,
 }) => {
+  const explorerBase = (import.meta as any).env?.VITE_BOT_EXPLORER_URL || 'https://scan.botchain.ai';
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [categoryFilter, setCategoryFilter] = useState<string>('ALL');
   const [statusFilter, setStatusFilter] = useState<string>('ALL');
@@ -181,11 +182,11 @@ export const TransactionTable: React.FC<TransactionTableProps> = ({
                     {/* Hash */}
                     <td>
                       <a
-                        href={`https://scan.bohr.life/tx/${tx.hash}`}
+                        href={`${explorerBase}/tx/${tx.hash}`}
                         target="_blank"
                         rel="noreferrer"
                         className="hash-link"
-                        title={`View on Bohr Explorer: ${tx.hash}`}
+                        title={`View on BOT Chain Explorer: ${tx.hash}`}
                       >
                         <span>{tx.hash.slice(0, 8)}...{tx.hash.slice(-6)}</span>
                         <ExternalLink size={12} />

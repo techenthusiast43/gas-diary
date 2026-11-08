@@ -14,10 +14,10 @@ module.exports = {
     },
   },
   networks: {
-    botTestnet: {
+    botMainnet: {
       type: "http",
-      url: "https://rpc.bohr.life",
-      chainId: 968,
+      url: process.env.VITE_BOT_RPC_URL || "https://rpc.botchain.ai",
+      chainId: 677,
       accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : [],
     },
   },

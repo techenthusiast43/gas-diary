@@ -28,7 +28,8 @@ export function exportTransactionsToCsv(
 
   const rows = transactions.map((tx) => {
     const dateStr = new Date(tx.timestamp * 1000).toISOString().replace('T', ' ').replace('Z', '');
-    const explorerUrl = `https://scan.bohr.life/tx/${tx.hash}`;
+    const explorerBase = (import.meta as any).env?.VITE_BOT_EXPLORER_URL || 'https://scan.botchain.ai';
+    const explorerUrl = `${explorerBase}/tx/${tx.hash}`;
 
     const cleanField = (val: string | number | null | undefined) => {
       if (val === null || val === undefined) return '""';

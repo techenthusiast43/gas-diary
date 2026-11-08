@@ -156,7 +156,7 @@ export const App: React.FC = () => {
                 <span style={{ fontWeight: 600, fontSize: '0.9rem' }}>GasDiary.sol Smart Contract Configuration</span>
               </div>
               <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginBottom: '12px' }}>
-                Specify your deployed GasDiary contract address on BOT Chain (Chain ID: 968). By default, test records can also be stored locally without gas cost.
+                Specify your deployed GasDiary contract address on BOT Chain (Chain ID: 677). By default, test records can also be stored locally without gas cost.
               </p>
               <div style={{ display: 'flex', gap: '10px' }}>
                 <input
@@ -211,6 +211,143 @@ export const App: React.FC = () => {
           walletAddress={address || ''}
           onOpenTagModal={(tx) => setSelectedTx(tx)}
         />
+
+        {/* 4. BOT Chain Ecosystem Showcase Section */}
+        <section
+          id="ecosystem-showcase"
+          className="glass-card"
+          style={{
+            marginTop: '32px',
+            marginBottom: '20px',
+            padding: '24px 28px',
+            background: 'linear-gradient(135deg, rgba(14, 18, 23, 0.9) 0%, rgba(20, 220, 172, 0.05) 100%)',
+            border: '1px solid rgba(20, 220, 172, 0.25)',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px', marginBottom: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+              <img
+                src="/bot-logo.png"
+                alt="BOT Chain Logo"
+                style={{ width: '42px', height: '42px', borderRadius: '10px', filter: 'drop-shadow(0 0 10px rgba(20, 220, 172, 0.4))' }}
+              />
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 700, letterSpacing: '-0.02em' }}>
+                    BOT Chain Ecosystem Showcase
+                  </h3>
+                  <span className="badge badge-tag" style={{ background: 'rgba(20, 220, 172, 0.15)', color: '#14DCAC', fontSize: '0.72rem' }}>
+                    Mainnet (Chain ID: 677)
+                  </span>
+                </div>
+                <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
+                  GasDiary is built natively on BOT Chain — an ultra-fast EVM network with 150 Million BOT total supply.
+                </p>
+              </div>
+            </div>
+
+            {/* Quick Action Links with Official BOT Logo at the front */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+              <a
+                href="https://botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-secondary"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '9px 16px',
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                }}
+              >
+                <img
+                  src="/bot-logo.png"
+                  alt="BOT"
+                  style={{ width: '18px', height: '18px', borderRadius: '4px' }}
+                />
+                <span>BOT Chain Website</span>
+                <ExternalLink size={12} />
+              </a>
+
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                className="btn btn-primary"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '9px 16px',
+                  fontSize: '0.85rem',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                }}
+              >
+                <img
+                  src="/bot-logo.png"
+                  alt="BOT"
+                  style={{ width: '18px', height: '18px', borderRadius: '4px' }}
+                />
+                <span>BOT Chain Explorer</span>
+                <ExternalLink size={12} />
+              </a>
+            </div>
+          </div>
+
+          {/* Ecosystem Links Details Grid */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: '14px',
+              paddingTop: '16px',
+              borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+            }}
+          >
+            <div style={{ fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <img
+                src="/bot-logo.png"
+                alt="BOT"
+                style={{ width: '15px', height: '15px', borderRadius: '3px', flexShrink: 0 }}
+              />
+              <span>
+                <span style={{ color: 'var(--text-muted)' }}>BOT Chain Website: </span>
+                <a href="https://botchain.ai" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-primary)', fontWeight: 600, textDecoration: 'none' }}>
+                  https://botchain.ai
+                </a>
+              </span>
+            </div>
+            <div style={{ fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <img
+                src="/bot-logo.png"
+                alt="BOT"
+                style={{ width: '15px', height: '15px', borderRadius: '3px', flexShrink: 0 }}
+              />
+              <span>
+                <span style={{ color: 'var(--text-muted)' }}>BOT Chain Explorer: </span>
+                <a href="https://scan.botchain.ai" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-secondary)', fontWeight: 600, textDecoration: 'none' }}>
+                  https://scan.botchain.ai
+                </a>
+              </span>
+            </div>
+            <div style={{ fontSize: '0.82rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <span style={{ color: 'var(--text-muted)' }}>GasDiary.sol Contract: </span>
+              <a
+                href={`https://scan.botchain.ai/address/${customContract}`}
+                target="_blank"
+                rel="noreferrer"
+                className="font-mono"
+                style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}
+              >
+                {customContract.slice(0, 8)}...{customContract.slice(-6)}
+              </a>
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* Modal for Tagging & Note taking */}
@@ -225,26 +362,124 @@ export const App: React.FC = () => {
       <footer
         style={{
           borderTop: '1px solid var(--border-subtle)',
-          padding: '24px 32px',
-          textAlign: 'center',
-          fontSize: '0.82rem',
-          color: 'var(--text-muted)',
-          background: 'rgba(9, 11, 14, 0.9)',
+          padding: '28px 32px',
+          background: 'rgba(9, 11, 14, 0.95)',
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '20px', flexWrap: 'wrap', marginBottom: '8px' }}>
-          <span>BOT Chain Testnet (Chain ID 968)</span>
-          <span>•</span>
-          <a href="https://rpc.bohr.life" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)' }}>
-            RPC: rpc.bohr.life
-          </a>
-          <span>•</span>
-          <a href="https://scan.bohr.life" target="_blank" rel="noreferrer" style={{ color: 'var(--accent-primary)', display: 'inline-flex', alignItems: 'center', gap: '3px' }}>
-            <span>Block Explorer</span>
-            <ExternalLink size={11} />
-          </a>
+        <div
+          style={{
+            maxWidth: '1200px',
+            margin: '0 auto',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '16px',
+          }}
+        >
+          {/* Top Footer Row: BOT Chain Brand & Both Mandatory Links with Official Logo at front */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '16px',
+              paddingBottom: '16px',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <img
+                src="/bot-logo.png"
+                alt="BOT Chain Logo"
+                style={{ width: '28px', height: '28px', borderRadius: '6px' }}
+              />
+              <span style={{ fontWeight: 700, fontSize: '0.95rem', letterSpacing: '-0.01em', color: 'var(--text-primary)' }}>
+                BOT Chain
+              </span>
+              <span style={{ color: 'var(--text-muted)', fontSize: '0.8rem' }}>• Mainnet (Chain ID: 677)</span>
+            </div>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap', fontSize: '0.85rem' }}>
+              <a
+                href="https://botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  color: 'var(--text-secondary)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  textDecoration: 'none',
+                  fontWeight: 500,
+                }}
+              >
+                <img
+                  src="/bot-logo.png"
+                  alt="BOT"
+                  style={{ width: '18px', height: '18px', borderRadius: '4px', flexShrink: 0 }}
+                />
+                <span>BOT Chain website: https://botchain.ai</span>
+                <ExternalLink size={11} />
+              </a>
+
+              <a
+                href="https://scan.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  color: 'var(--text-secondary)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  textDecoration: 'none',
+                  fontWeight: 500,
+                }}
+              >
+                <img
+                  src="/bot-logo.png"
+                  alt="BOT"
+                  style={{ width: '18px', height: '18px', borderRadius: '4px', flexShrink: 0 }}
+                />
+                <span>BOT Chain explorer: https://scan.botchain.ai</span>
+                <ExternalLink size={11} />
+              </a>
+            </div>
+          </div>
+
+          {/* Bottom Footer Row: Protocol Info */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              flexWrap: 'wrap',
+              gap: '12px',
+              fontSize: '0.78rem',
+              color: 'var(--text-muted)',
+            }}
+          >
+            <div>GasDiary — Self-Sovereign Expense Tracking & Smart Contract Annotations for Web3</div>
+            <div style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
+              <a
+                href="https://rpc.botchain.ai"
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: 'var(--text-muted)', textDecoration: 'none' }}
+              >
+                RPC: rpc.botchain.ai
+              </a>
+              <span>•</span>
+              <a
+                href={`https://scan.botchain.ai/address/${customContract}`}
+                target="_blank"
+                rel="noreferrer"
+                style={{ color: 'var(--accent-primary)', textDecoration: 'none' }}
+              >
+                Contract: {customContract.slice(0, 6)}...{customContract.slice(-4)}
+              </a>
+            </div>
+          </div>
         </div>
-        <div>GasDiary — Self-Sovereign Expense Tracking & Smart Contract Annotations for Web3</div>
       </footer>
     </div>
   );

@@ -15,7 +15,7 @@ export const SAMPLE_TRANSACTIONS: TransactionRecord[] = [
     status: 'ok',
     methodName: 'swapExactTokensForETH',
     category: 'DeFi Swap',
-    note: 'Swapped BOT on Bohrdex',
+    note: 'Swapped BOT on BOT DEX',
     hasOnChainTag: true,
   },
   {
@@ -146,7 +146,8 @@ export async function fetchAddressTransactions(
   address: string
 ): Promise<{ transactions: TransactionRecord[]; isSample: boolean }> {
   try {
-    const url = `https://scan.bohr.life/api/v2/addresses/${address}/transactions`;
+    const baseUrl = (import.meta as any).env?.VITE_BOT_EXPLORER_URL || 'https://scan.botchain.ai';
+    const url = `${baseUrl}/api/v2/addresses/${address}/transactions`;
     const response = await fetch(url, {
       headers: {
         Accept: 'application/json',

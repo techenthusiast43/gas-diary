@@ -16,11 +16,12 @@ export const Header: React.FC<HeaderProps> = ({
   onRefreshData,
   isLoading,
 }) => {
-  const { address, isConnected } = useAccount();
+  const { address, isConnected, chain } = useAccount();
   const { disconnect } = useDisconnect();
   const { open } = useAppKit();
 
   const shortAddress = address ? `${address.slice(0, 6)}...${address.slice(-4)}` : '';
+  const networkDisplay = chain?.name ? `${chain.name} (${chain.id})` : 'BOT Chain (677)';
 
   return (
     <header className="navbar">
@@ -36,10 +37,17 @@ export const Header: React.FC<HeaderProps> = ({
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '14px', flexWrap: 'wrap' }}>
         {/* Network indicator */}
-        <div className="network-pill" title="Connected to BOT Chain Testnet (Chain ID 968)">
-          <span className="pulse-dot"></span>
-          <span>BOT Testnet (968)</span>
-        </div>
+        <a
+          href="https://scan.botchain.ai"
+          target="_blank"
+          rel="noreferrer"
+          className="network-pill"
+          style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+          title={`Connected to ${networkDisplay} — Click to open BOT Chain Explorer`}
+        >
+          <img src="/bot-logo.png" alt="BOT" style={{ width: '14px', height: '14px', borderRadius: '3px' }} />
+          <span>{networkDisplay}</span>
+        </a>
 
         {/* Demo Mode Toggle */}
         <button

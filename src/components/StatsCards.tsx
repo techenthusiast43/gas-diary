@@ -7,9 +7,10 @@ interface StatsCardsProps {
 }
 
 export const StatsCards: React.FC<StatsCardsProps> = ({ stats }) => {
-  const botPriceUsd = 12.39; // Current price reported by Bohr scan API
+  const botPriceUsd = 12.52; // Current price reported by BOT Chain Mainnet API
   const totalFiat = (stats.totalFeeBot * botPriceUsd).toFixed(2);
   const failedFiat = (stats.failedFeeBot * botPriceUsd).toFixed(2);
+  const explorerBase = (import.meta as any).env?.VITE_BOT_EXPLORER_URL || 'https://scan.botchain.ai';
 
   return (
     <div className="metrics-grid">
@@ -84,7 +85,7 @@ export const StatsCards: React.FC<StatsCardsProps> = ({ stats }) => {
           <div className="metric-sub">
             {stats.highestFeeTx ? (
               <a
-                href={`https://scan.bohr.life/tx/${stats.highestFeeTx.hash}`}
+                href={`${explorerBase}/tx/${stats.highestFeeTx.hash}`}
                 target="_blank"
                 rel="noreferrer"
                 className="hash-link"

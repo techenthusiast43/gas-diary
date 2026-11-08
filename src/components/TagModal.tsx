@@ -170,7 +170,7 @@ export const TagModal: React.FC<TagModalProps> = ({
           <textarea
             id="textarea-note"
             className="form-textarea"
-            placeholder="Add a memo for your tax or spending records (e.g. Swapped on Bohrdex for gas liquidity)"
+            placeholder="Add a memo for your tax or spending records (e.g. Swapped on BOT DEX for gas liquidity)"
             value={note}
             onChange={(e) => setNote(e.target.value)}
           />

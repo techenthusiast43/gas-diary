@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" fill="none">
+  <defs>
+    <linearGradient id="botGrad" x1="10" y1="10" x2="110" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#14DCAC"/>
+      <stop offset="50%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+    <linearGradient id="innerGlow" x1="30" y1="20" x2="90" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#14DCAC" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Hexagonal Node Shield -->
+  <polygon points="60,10 102,34 102,86 60,110 18,86 18,34" 
+           fill="#0B1017" stroke="url(#botGrad)" stroke-width="4" stroke-linejoin="round"/>
+
+  <!-- Inner Hexagon Accent -->
+  <polygon points="60,22 92,40 92,80 60,98 28,80 28,40" 
+           fill="url(#innerGlow)" stroke="#14DCAC" stroke-width="1.5" stroke-opacity="0.4" stroke-dasharray="4 2"/>
+
+  <!-- Stylized Robotic Node / AI Core / Circuit Links -->
+  <circle cx="60" cy="45" r="9" fill="#14DCAC"/>
+  <circle cx="43" cy="72" r="7" fill="#38BDF8"/>
+  <circle cx="77" cy="72" r="7" fill="#00B5D8"/>
+
+  <!-- Circuit Interconnect Tracks -->
+  <line x1="60" y1="45" x2="43" y2="72" stroke="url(#botGrad)" stroke-width="3" stroke-linecap="round"/>
+  <line x1="60" y1="45" x2="77" y2="72" stroke="url(#botGrad)" stroke-width="3" stroke-linecap="round"/>
+  <line x1="43" y1="72" x2="77" y2="72" stroke="#14DCAC" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.7"/>
+
+  <!-- Central Pulse Nucleus -->
+  <circle cx="60" cy="63" r="3.5" fill="#FFFFFF"/>
+</svg>
+
